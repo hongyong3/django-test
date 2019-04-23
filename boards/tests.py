@@ -23,17 +23,16 @@ class BoardModelTest(TestCase):
         # given
         data = {'title': '제목', 'content': '내용'}
         # when then
-        self.assertEqual(BoardForm(data).is_vaild(), True)
+        self.assertEqual(BoardForm(data).is_valid(), True)
     
     def test_03_boardform_without_title(self):
         data = {'content': '내용'}
-        self.assertEqual(BoardForm(data).is_vaild(), False)
-    
+        self.assertEqual(BoardForm(data).is_valid(), False)
+        
     def test_04_boardform_without_content(self):
         data = {'title': '제목'}
-        self.assertEqual(BoardForm(data).is_vaild(), False)
+        self.assertEqual(BoardForm(data).is_valid(), False)
         
-    
 # 3. View test
 class BoardViewTest(TestCase):
     # 공통적인 given 상황을 구성하기에 유용하다.
@@ -74,3 +73,4 @@ class BoardViewTest(TestCase):
             # form.is_vaild()를 통과하지못해서 팅겨져 나옴.
             # assertContains response 해당하는 글자가지 확인하는 메소드
             
+    
